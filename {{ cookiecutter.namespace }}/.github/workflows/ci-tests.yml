@@ -1,0 +1,26 @@
+name: CI Tests
+
+on:
+  push:
+
+jobs:
+  run-tests:
+    name: Run CI Tests
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          python-version: 3.8
+
+      - name: Install dev reqs
+        run: |
+          pip install -r requirements-dev.txt
+
+      - name: Flake Check
+        run: flake8
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest -sv src/pynwb/tests

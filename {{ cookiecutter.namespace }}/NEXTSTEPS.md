@@ -53,6 +53,7 @@ use any dependencies.
  and push it to GitHub. You will need a GitHub account.
     - Follow these directions:
   https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line
+    - Notice that a deffult Github Actions Workflow file exists in `{{ cookiecutter.namespace }}/.github/workflows/` to run CI tests on push. You may want to modify or add extra steps (see [documentation](https://docs.github.com/en/actions))
 
 3. Change directory into `docs`.
 
